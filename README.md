@@ -1,2 +1,2 @@
 # first3dgame
-# Game I'm sorta making to try to learn some Unity and C#
+# Game I'm making to try to learn some C# and Unity

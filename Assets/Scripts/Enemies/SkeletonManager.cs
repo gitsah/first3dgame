@@ -12,6 +12,7 @@ public class SkeletonManager : MobManager {
         isAttacking = false;
         itHasHit = false;
         hitpoints = 1000;
+        lifeRegen = 1;
         sightRange = 11.5f;
         meleeRange = 2.62f;
         speed = 0.042f;
@@ -30,6 +31,7 @@ public class SkeletonManager : MobManager {
         moveTowardsPlayer();
         meleeAttack();
         AnimationCheck();
+        regenLife();
         //Debug.Log(hitpoints);
     }
 }

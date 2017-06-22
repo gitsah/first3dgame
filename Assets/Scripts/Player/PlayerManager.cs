@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject target;
 
     public float hitpoints { get; set; }
+    public float lifeRegen { get; set; }
     public bool inStandingAnim { get; set; }
     public float meleeDamage { get; set; }
     public float attackTime { get; set; }
@@ -35,6 +36,7 @@ public class PlayerManager : MonoBehaviour
         meleeDamage = 60;
         itHasHit = false;
         hitpoints = 1000;
+        lifeRegen = 1;
         mousePos = player.transform.position;
         speed = 4.3f;
 	}
@@ -47,6 +49,7 @@ public class PlayerManager : MonoBehaviour
         inStandingAnim = stateInfo.fullPathHash == ASM.great_sword_slash_2;
         moveCheck();
         lookAtCheck();
+        hitpoints += lifeRegen * TimerUtility.DeltaTimer();
         // Debug.Log(hitpoints);
     }
     

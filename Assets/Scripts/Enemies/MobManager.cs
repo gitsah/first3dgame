@@ -8,6 +8,7 @@ public class MobManager : MonoBehaviour
     protected AnimationState animationState;
     protected bool isAttacking;
     protected bool itHasHit;
+    protected float lifeRegen;
     protected float meleeAttackHigh;
     protected float meleeAttackLow;
     protected float meleeDamage;
@@ -23,10 +24,11 @@ public class MobManager : MonoBehaviour
 
     protected PlayerManager player;
 
+    //can be called to deal damage to this unit
     public void DealDamage(int damage)
     {
         hitpoints -= damage;
-        if (hitpoints < 0)
+        if (hitpoints <= 0)
         {
             hitpoints = 0;
             Destroy(gameObject);
@@ -37,6 +39,11 @@ public class MobManager : MonoBehaviour
     public bool inRange(float range)
     {
         return Vector3.Distance(transform.position, controller.transform.position) < range;
+    }
+
+    protected void regenLife()
+    {
+        hitpoints += lifeRegen * TimerUtility.DeltaTimer();
     }
 
     //looks at and moves towards the player if they're within site range specified
