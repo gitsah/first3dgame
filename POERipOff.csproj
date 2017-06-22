@@ -83,6 +83,9 @@
     <Compile Include="Assets\Scripts\Enemies\SkeletonManager.cs" />
     <Compile Include="Assets\Scripts\Game\AnimationState.cs" />
     <Compile Include="Assets\Scripts\Game\TimerUtility.cs" />
+    <Compile Include="Assets\Scripts\Game\Weapons\Bow.cs" />
+    <Compile Include="Assets\Scripts\Game\Weapons\Sword.cs" />
+    <Compile Include="Assets\Scripts\Game\Weapons\Weapon.cs" />
     <Compile Include="Assets\Scripts\Player\CombatManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
   </ItemGroup>
