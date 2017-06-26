@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour
     private Vector3 mousePos;
     private float speed;
     private bool itHasHit;
+    //temporarily giving it a default Weapon, will later recieve current Weapon info from the WeaponManager
+    private Weapon playerWeapon = new Weapon();
 
     public Animator animator;
     public AnimationState animationState;
@@ -30,10 +32,16 @@ public class PlayerManager : MonoBehaviour
 
     // Use this for initialization
     private void Start()
-    {
+    {   //using a temp filler weapon here, will later add weapon spawning and pickups to determine these stats for the player
+        playerWeapon.atkSpeed = 0.39f;
+        playerWeapon.critChance = 0.05f;
+        playerWeapon.critDamage = 1.5f;
+        playerWeapon.damage = 60;
+
+
         attackRange = 2.9f;
-        attackTime = 0.39f;
-        meleeDamage = 60;
+        attackTime = playerWeapon.atkSpeed;
+        meleeDamage = playerWeapon.damage;
         itHasHit = false;
         hitpoints = 1000;
         lifeRegen = 1;

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//parent class for weapons, quite empty for now but will have info for global weapon stats and useful methods
+//Class used to create weapons, more stats will be added as needed
 public class Weapon {
-    protected float damage;
-    protected float atkSpeed;
-    protected float critChance;
-    protected float critDamage;
+    public float damage;
+    public float atkSpeed;
+    public float critChance;
+    public float critDamage;
 
 
 }
