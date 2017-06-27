@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Game\Weapons\WeaponManager.cs" />
     <Compile Include="Assets\Scripts\Player\CombatManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerManager.cs" />
+    <Compile Include="Assets\test.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\GreatswordofFrozenNight\SpecLightDiffuse.shader" />
