@@ -34,14 +34,14 @@ public class PlayerManager : MonoBehaviour
     // Use this for initialization
     private void Start()
     {   //using a temp filler weapon here, will later add weapon spawning and pickups to determine these stats for the player
-        playerWeapon = new Weapon(60, 0.39f, 0.05f, 1.5f);
+        playerWeapon = new Weapon();
 
         attackRange = 2.9f;
         attackTime = playerWeapon.atkSpeed;
         meleeDamage = playerWeapon.damage;
         itHasHit = false;
         hitpoints = 1000;
-        lifeRegen = 1;
+        lifeRegen = 0.02f;
         mousePos = player.transform.position;
         speed = 4.3f;
 	}
@@ -55,7 +55,7 @@ public class PlayerManager : MonoBehaviour
         moveCheck();
         lookAtCheck();
         hitpoints += lifeRegen * TimerUtility.DeltaTimer();
-        Debug.Log(playerWeapon.damage);
+        //Debug.Log(playerWeapon.damage);
     }
     
     //called once per frame but always after all update methods called
@@ -67,10 +67,12 @@ public class PlayerManager : MonoBehaviour
     //calls move methods if mouse is clicked
     private void moveCheck()
     {
+        //checks if unit is supposed to be stationary
         if (!inStandingAnim)
         {
             itHasHit = false;
 
+            //checks for mouse down, moves if it is
             if (Input.GetMouseButton(0))
             {
                 locatePos();

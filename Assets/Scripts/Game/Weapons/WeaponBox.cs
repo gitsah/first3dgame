@@ -5,18 +5,16 @@ using UnityEngine;
 public class WeaponBox : MonoBehaviour {
     
     private Weapon thisWeapon;
-    private float swapCooldown;
+    //private float swapCooldown;
 
     public GameObject player;
-    bool canSwap;
+    //bool canSwap;
 
     // Use this for initialization
     void Start () {
         //create a weapon for this box
         //TODO: randomize values within a range eventually
         thisWeapon = new Weapon(80, 0.5f, 0.15f, 1.8f);
-        swapCooldown = 0;
-        canSwap = true;
 
     }
 	

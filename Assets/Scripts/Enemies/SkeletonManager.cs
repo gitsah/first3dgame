@@ -11,8 +11,9 @@ public class SkeletonManager : MobManager {
         player = GameObject.Find("Player").GetComponent<PlayerManager>();
         isAttacking = false;
         itHasHit = false;
-        hitpoints = 1000;
-        lifeRegen = 1;
+        maxHP = 1000;
+        hitpoints = maxHP;
+        lifeRegen = 0.02f;
         sightRange = 11.5f;
         meleeRange = 2.62f;
         speed = 0.042f;
@@ -31,7 +32,10 @@ public class SkeletonManager : MobManager {
         moveTowardsPlayer();
         meleeAttack();
         AnimationCheck();
-        regenLife();
+
+        if(hitpoints < maxHP)
+            regenLife();
+
         //Debug.Log(hitpoints);
     }
 }

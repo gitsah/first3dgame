@@ -15,6 +15,7 @@ public class MobManager : MonoBehaviour
     protected float meleeRange;
     protected float sightRange;
     protected float speed;
+    protected float maxHP;
     protected AnimatorStateInfo stateInfo;
     public float hitpoints { get; set; }
 
