@@ -10,4 +10,12 @@ public class Weapon {
     public float critDamage;
 
 
+    public Weapon(float setDamage, float setAtkSpeed, float setCritChance, float setCritDamage)
+    {
+        damage = setDamage;
+        atkSpeed = setAtkSpeed;
+        critChance = setCritChance;
+        critDamage = setCritDamage;
+    }
+
 }

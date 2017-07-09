@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//This class will keep track of the currently equiped weapon and picking up and swapping weapons, the PlayerManager will draw the weapon stats from here
+
+//commented out until further notice, will likely handle the weapon from the player manager and the swapping from the weaponbox
+/*//This class will keep track of the currently equiped weapon and picking up and swapping weapons, the PlayerManager will draw the weapon stats from here
 public class WeaponManager : MonoBehaviour{
     Weapon currentWeapon;
     Weapon swapOption;
@@ -18,4 +20,4 @@ public class WeaponManager : MonoBehaviour{
         }
     }
 
-}
+}*/

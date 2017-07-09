@@ -8,9 +8,10 @@ public class PlayerManager : MonoBehaviour
     private Vector3 mousePos;
     private float speed;
     private bool itHasHit;
-    //temporarily giving it a default Weapon, will later recieve current Weapon info from the WeaponManager
-    private Weapon playerWeapon = new Weapon();
 
+
+    //start player off with a default Weapon
+    public static Weapon playerWeapon;
     public Animator animator;
     public AnimationState animationState;
     public Camera mainCam;
@@ -33,11 +34,7 @@ public class PlayerManager : MonoBehaviour
     // Use this for initialization
     private void Start()
     {   //using a temp filler weapon here, will later add weapon spawning and pickups to determine these stats for the player
-        playerWeapon.atkSpeed = 0.39f;
-        playerWeapon.critChance = 0.05f;
-        playerWeapon.critDamage = 1.5f;
-        playerWeapon.damage = 60;
-
+        playerWeapon = new Weapon(60, 0.39f, 0.05f, 1.5f);
 
         attackRange = 2.9f;
         attackTime = playerWeapon.atkSpeed;
@@ -58,7 +55,7 @@ public class PlayerManager : MonoBehaviour
         moveCheck();
         lookAtCheck();
         hitpoints += lifeRegen * TimerUtility.DeltaTimer();
-        // Debug.Log(hitpoints);
+        Debug.Log(playerWeapon.damage);
     }
     
     //called once per frame but always after all update methods called
