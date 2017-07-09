@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Enemies\MobManager.cs" />
+    <Compile Include="Assets\Scripts\Enemies\MobSpawner.cs" />
     <Compile Include="Assets\Scripts\Enemies\SkeletonManager.cs" />
     <Compile Include="Assets\Scripts\Game\AnimationState.cs" />
     <Compile Include="Assets\Scripts\Game\TimerUtility.cs" />
